@@ -21,11 +21,14 @@ fetch("wishes.json")
     document.getElementById("dilek-metin").textContent = "🌠 Dilek yüklenemedi.";
   });
 
-// Arka plan API'den alınacaksa buraya endpoint’i yaz
-fetch("https://api.ticxmedia.com/background")
+// Unsplash API ile arka plan görseli çek
+fetch("https://api.unsplash.com/photos/random?query=stars&orientation=landscape&client_id=Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM")
   .then(res => res.json())
   .then(data => {
-    document.getElementById("arka-img").src = data.imageUrl;
+    document.getElementById("arka-img").src = data.urls.full;
+  })
+  .catch(() => {
+    document.getElementById("arka-img").src = "arkaplan.jpg"; // yedek görsel
   });
 
 // Görüntü yakalama
