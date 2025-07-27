@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cookie-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  position: relative;
+  max-width: 400px;
+}
+
+.cookie-left, .cookie-right {
+  font-size: 40px;
+  display: inline-block;
+  transition: transform 1s ease;
+}
+
+.cookie-box:hover .cookie-left {
+  transform: translateX(-40px) rotate(-20deg);
+}
+
+.cookie-box:hover .cookie-right {
+  transform: translateX(40px) rotate(20deg);
+}
+
+.wish-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
