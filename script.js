@@ -9,23 +9,31 @@ window.addEventListener("load", () => {
   setTimeout(() => audio.play(), 500);
 });
 
-// Dinamik dilek metni çekme
+// Dilek metnini JSON'dan çek
 fetch("wishes.json")
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
     const wishes = data.wishes;
     const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
     document.getElementById("dilek-metin").innerHTML = `🌠 Senin bugünkü dileğin: <strong>${randomWish}</strong>`;
   })
-  .catch(error => {
+  .catch(() => {
     document.getElementById("dilek-metin").textContent = "🌠 Dilek yüklenemedi.";
-    console.error("Dilek verisi alınamadı:", error);
   });
 
-// Görsel ve popup göster
+// Arka plan API'den alınacaksa buraya endpoint’i yaz
+fetch("https://api.ticxmedia.com/background")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("arka-img").src = data.imageUrl;
+  });
+
+// Görüntü yakalama
 function captureAndShowPopup() {
-  const targetDiv = document.getElementById("dilek-alani");
-  html2canvas(targetDiv).then(canvas => {
+  html2canvas(document.getElementById("dilek-alani"), {
+    useCORS: true,
+    backgroundColor: null
+  }).then(canvas => {
     const imgData = canvas.toDataURL("image/png");
     document.getElementById("screenshot").src = imgData;
     document.getElementById("popup").style.display = "block";
@@ -42,13 +50,3 @@ function downloadImage() {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
-const wishes = [
-  "Hayat sana gülümsesin!",
-  "Bugün senin günün!",
-  "Güzel şeyler seni bulsun!",
-  "Şans hep seninle olsun!",
-  "Kalbinin dileği gerçek olsun!"
-];
-const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
-document.getElementById("dilek-metin").innerHTML = `🌠 Senin bugünkü dileğin: <strong>${randomWish}</strong>`;
-
