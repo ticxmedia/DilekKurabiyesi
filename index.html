@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dilek Kurabiyesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="dilek-alani" class="dilek-box">
+    <img id="kurabiye-img" src="dilekkurabiyesipng_left.png" />
+    <p id="dilek-metin">🌠 Dilek yükleniyor...</p>
+    <audio id="cookie-audio" src="cookie-sound.mp3" preload="auto"></audio>
+  </div>
+
+  <button onclick="captureAndShowPopup()" class="paylas-btn">Paylaş</button>
+
+  <div id="popup" class="popup">
+    <h3>Dileğini paylaşmak ister misin?</h3>
+    <img id="screenshot" />
+    <p>Instagram’da paylaşırken <strong>@ticxmedia</strong>'yı etiketlemeyi <em>unutma!</em> 🤝</p>
+    <button onclick="downloadImage()" class="btn-etiket">Görseli Kaydet</button>
+    <a href="https://www.instagram.com/ticxmedia" target="_blank" class="btn-etiket">Instagram'a Git</a>
+    <button onclick="closePopup()" class="btn-kapat">Kapat</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

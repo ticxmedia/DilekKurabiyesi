@@ -1,0 +1,74 @@
+body {
+  font-family: sans-serif;
+  background: #f5f5fa;
+  text-align: center;
+  padding: 20px;
+}
+
+.dilek-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#kurabiye-img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+#dilek-metin {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.paylas-btn {
+  padding: 12px 24px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.popup img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.btn-etiket {
+  background: #E1306C;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-kapat {
+  background: #aaa;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
