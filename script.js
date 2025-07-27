@@ -42,3 +42,13 @@ function downloadImage() {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
+const wishes = [
+  "Hayat sana gülümsesin!",
+  "Bugün senin günün!",
+  "Güzel şeyler seni bulsun!",
+  "Şans hep seninle olsun!",
+  "Kalbinin dileği gerçek olsun!"
+];
+const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+document.getElementById("dilek-metin").innerHTML = `🌠 Senin bugünkü dileğin: <strong>${randomWish}</strong>`;
+
