@@ -1,17 +1,34 @@
 body {
   font-family: sans-serif;
+  margin: 0;
   background: #f5f5fa;
-  text-align: center;
-  padding: 20px;
+  overflow-x: hidden;
+}
+
+.arka-plan {
+  position: relative;
+}
+
+#arka-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .dilek-box {
-  background: #fff;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  position: relative;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
 }
 
 #kurabiye-img {
@@ -32,6 +49,8 @@ body {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  margin: 10px auto;
+  display: block;
 }
 
 .popup {
@@ -41,8 +60,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   max-width: 90%;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto;
+  z-index: 999;
+  text-align: center;
 }
 
 .popup img {
@@ -59,8 +79,8 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  display: inline-block;
   text-decoration: none;
+  display: inline-block;
 }
 
 .btn-kapat {
