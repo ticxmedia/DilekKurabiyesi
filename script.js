@@ -22,7 +22,7 @@ async function fetchBackgroundImage() {
 // ✅ Aynı dizindeki `niyetler.json` dosyasından niyet çek
 async function fetchNiyet() {
   try {
-    const response = await fetch("niyetler.json");
+    const response = await fetch(`niyetler.json?v=${Date.now()}`);
     const data = await response.json();
     const niyetler = data.niyetler;
 
