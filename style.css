@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
   background-color: #222;
+  height: 100vh;
   display: flex;
+  align-items: center;        /* Dikey ortalama */
+  justify-content: center;    /* Yatay ortalama */
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: white;
   transition: background 1s ease-in-out;
   text-align: center;
