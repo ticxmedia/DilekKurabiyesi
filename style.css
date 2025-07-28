@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  margin-top: 20vh; /* Sayfa yüksekliğinin %20’si kadar aşağı kaydırır */
+  margin-top: 35vh; /* Sayfa yüksekliğinin %20’si kadar aşağı kaydırır */
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(6px);
   border-radius: 16px;
