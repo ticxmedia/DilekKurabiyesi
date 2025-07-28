@@ -4,23 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rastgele Niyet & Arka Plan</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Arka plan -->
-  <div id="bg-wrapper">
-    <img id="bg-image" />
+  <div class="container">
+    <h1>Rastgele Niyet & Arka Plan</h1>
+    <button onclick="degistir()">Yeni Niyet Getir</button>
+    <p id="niyet"></p>
+    <footer>
+      <img src="logo.png" alt="Logo" class="logo">
+    </footer>
   </div>
 
-  <!-- İçerik kutusu -->
-  <div class="outer-frame">
-    <div class="container">
-      <img src="kurabiye.png" alt="Kurabiye" class="cookie-img" />
-      <div class="message">Yükleniyor...</div>
-      <button class="share-btn">Paylaş</button>
-    </div>
-  </div>
+  <script>
+    const niyetler = [
+      "Bugün kendime nazik olacağım.",
+      "Yeni fikirlere açık olacağım.",
+      "Odaklanmış şekilde ilerleyeceğim.",
+      "Zorlukları fırsata çevireceğim.",
+      "Yaratıcılığımı özgür bırakacağım."
+    ];
 
-  <script src="script.js"></script>
+    function degistir() {
+      const rasgele = Math.floor(Math.random() * niyetler.length);
+      document.getElementById("niyet").innerText = niyetler[rasgele];
+    }
+  </script>
 </body>
 </html>
