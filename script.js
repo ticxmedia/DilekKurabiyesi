@@ -1,3 +1,33 @@
+const unsplashAccessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
+
+// Doğa temalı rastgele arka plan görseli çek
+async function fetchBackgroundImage() {
+  try {
+    const response = await fetch(
+      `https://api.unsplash.com/photos/random?query=nature&orientation=landscape&client_id=${unsplashAccessKey}`
+    );
+    const data = await response.json();
+    const imageUrl = data.urls.full;
+
+    document.body.style.backgroundImage = `url('${imageUrl}')`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+  } catch (error) {
+    console.error("Arka plan görseli alınamadı:", error);
+  }
+}
+
+// Pozitif niyet cümleleri çek (örnek olarak doğa temalı kelimelerle arama yapıyoruz)
+async function fetchNiyet() {
+  try {
+    const response = await fetch(
+      `https://api.unsplash.com/search/photos?query=positive&client_id=${unsplashAccessKey}`
+    );
+    const data = await response.json();
+
+
 const niyetler = [
   "Bugün iç huzurumu önceliklendireceğim.",
   "Zor zamanlarda bile umutlu kalacağım.",
