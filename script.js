@@ -1,6 +1,6 @@
 const unsplashAccessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
 
-// Doğa temalı rastgele arka plan görseli çek
+// Doğa temalı arka plan görseli çek
 async function fetchBackgroundImage() {
   try {
     const response = await fetch(
@@ -19,123 +19,25 @@ async function fetchBackgroundImage() {
   }
 }
 
-// Pozitif niyet cümleleri çek (örnek olarak doğa temalı kelimelerle arama yapıyoruz)
+// Rastgele niyet metni seç
 async function fetchNiyet() {
-  try {
-    const response = await fetch(
-      `https://api.unsplash.com/search/photos?query=positive&client_id=${unsplashAccessKey}`
-    );
-    const data = await response.json();
+  const niyetler = [
+    "Doğayla uyum içinde olacağım.",
+    "Her nefeste yenileniyorum.",
+    "Hayatın ritmine güveneceğim.",
+    "Güzellikleri fark edeceğim.",
+    "Bugün kendi ışığımı yayacağım."
+  ];
 
+  const rasgele = Math.floor(Math.random() * niyetler.length);
+  const niyetElement = document.getElementById("niyet");
 
-const niyetler = [
-  "Bugün iç huzurumu önceliklendireceğim.",
-  "Zor zamanlarda bile umutlu kalacağım.",
-  "Yeni fikirlere açık olacağım.",
-  "Yaratıcılığımı özgür bırakacağım.",
-  "Nazik ve sabırlı olacağım.",
-  "Geçmişi bırakıp ana odaklanacağım.",
-  "Kendimi affetmeye izin vereceğim.",
-  "Küçük şeylerden keyif alacağım.",
-  "Başarıya kendi hızımda ilerleyeceğim.",
-  "Kendimi daha yakından tanımak için zaman ayıracağım.",
-  "Cesurca adım atacağım.",
-  "Gülümsemeyi unutmayacağım.",
-  "Şefkatle yaklaşacağım.",
-  "Sınırlarımı koruyacağım.",
-  "Gerçek benliğimi kucaklayacağım.",
-  "Bugünü dolu dolu yaşayacağım.",
-  "Düşüncelerimi nazikçe yöneteceğim.",
-  "İçsel gücümü hatırlayacağım.",
-  "Gelecek için heyecan duyacağım.",
-  "Hayır demeyi öğreniyorum.",
-  "Kusursuzluk peşinde koşmayacağım.",
-  "Değişime açık olacağım.",
-  "Mutluluğu kendi içimde arayacağım.",
-  "Korkularımı sevgiyle kucaklayacağım.",
-  "Hayatın ritmini yakalayacağım.",
-  "Zihnimi dinlendireceğim.",
-  "Kendime iyi davranacağım.",
-  "İyilik yapmaktan geri durmayacağım.",
-  "Çevremi güzelleştireceğim.",
-  "Birlikte üretmenin gücüne inanacağım.",
-  "Kendimi ifade etmeye cesaret edeceğim.",
-  "İhtiyacım olan desteği istemekten çekinmeyeceğim.",
-  "Hayatın bana sunduğu fırsatları göreceğim.",
-  "Her şeyin geçici olduğunu hatırlayacağım.",
-  "Bugün yeni başlangıçlara açık olacağım.",
-  "İç sesime kulak vereceğim.",
-  "Doğayla bağ kuracağım.",
-  "Hayatın renklerini keşfedeceğim.",
-  "Kıyaslamayı bırakacağım.",
-  "Sadelikte güzellik arayacağım.",
-  "İçimden geldiği gibi davranacağım.",
-  "Hayatın bana öğrettiklerini seveceğim.",
-  "Bugün güçlü hissedeceğim.",
-  "Küçük adımlarla büyük yol alacağım.",
-  "Gözlem yaparak öğreneceğim.",
-  "Her şey zamanında olur diyeceğim.",
-  "Sabırla beklemenin değerini bileceğim.",
-  "Karşıma çıkanları deneyim olarak göreceğim.",
-  "Geleceğe güvenle bakacağım.",
-  "Hayatın akışına uyum sağlayacağım.",
-  "Ruhumu besleyecek şeyler seçeceğim.",
-  "Hatalarım bana ders olacak.",
-  "Bağ kurmanın önemini hatırlayacağım.",
-  "Gerçek ihtiyaçlarımı göreceğim.",
-  "Bazen durmanın da ilerlemek olduğunu kabul edeceğim.",
-  "Kendimi yargılamadan dinleyeceğim.",
-  "İçsel dengemi koruyacağım.",
-  "Merakla keşfedeceğim.",
-  "Hayatın sürprizlerine açık olacağım.",
-  "Zorluklarda bile güzellik arayacağım.",
-  "Cesaretimi kutlayacağım.",
-  "Kendi hikayemi sahipleniyorum.",
-  "Bugün ne olursa olsun şükredeceğim.",
-  "İçimdeki çocuğu mutlu edeceğim.",
-  "Bir adım bile olsa ilerleyeceğim.",
-  "Sadece anı yaşamayı seçeceğim.",
-  "Kendimi başkalarının gözünden görmeyi bırakacağım.",
-  "Enerjimi bana iyi gelen şeylere ayıracağım.",
-  "Benim için doğru olanı seçeceğim.",
-  "Bugünü yaratıcı bir gün yapacağım.",
-  "Huzuru aramak yerine yaratacağım.",
-  "Bugün kendimi dinleyeceğim.",
-  "Hayatımdaki güzellikleri fark edeceğim.",
-  "Kendimi olduğum gibi kabul edeceğim.",
-  "Gerçekten ne istediğime odaklanacağım.",
-  "İçimdeki ışığı yayacağım.",
-  "Hayatımın iplerini elime alacağım.",
-  "Dinlemeyi seçtiğimde öğrenmeye açılırım.",
-  "Zorluklar beni büyütür.",
-  "Mutlu olmak için bir neden yaratacağım.",
-  "Yavaşlamak bana güç verir.",
-  "Bugün kendimle barışacağım.",
-  "Benliğimi onurlandıracağım.",
-  "İlhamı hayatın içinde arayacağım.",
-  "Sınırlarımı keşfedeceğim.",
-  "Hayal kurmaya cesaret edeceğim.",
-  "Şu an olduğum yer değerli.",
-  "Bugün yeni bir ben doğuyor.",
-  "Her adımım bir iz bırakıyor.",
-  "Sevgiyle yaklaşmak bana iyi geliyor.",
-  "Bugün seçimlerimin farkında olacağım.",
-  "Hayat benimle birlikte dönüşüyor.",
-  "Birlikte olmanın gücünü kutlayacağım.",
-  "Değişim benim içimde başlıyor.",
-  "Bugün kalbimle hareket edeceğim.",
-  "Hayatımı kendim tasarlayacağım.",
-  "Farkındalıkla yaşayacağım.",
-  "Bugün ne olursa olsun kendime sadık kalacağım.",
-  "Ben olduğum gibi yeterliyim.",
-  "Güzellikleri fark etmenin zamanı.",
-  "Hedeflerimi tutkuyla takip edeceğim.",
-  "Bugün sevgiyle adım atacağım.",
-  "Her gün bir mucizeye dönüşebilir."
-];
-
+  if (niyetElement) {
+    niyetElement.innerText = niyetler[rasgele];
+  }
+}
 
 window.addEventListener("DOMContentLoaded", () => {
-  const rasgele = Math.floor(Math.random() * niyetler.length);
-  document.getElementById("niyet").innerText = niyetler[rasgele];
+  fetchBackgroundImage();
+  fetchNiyet();
 });
