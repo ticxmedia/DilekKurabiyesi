@@ -9,27 +9,15 @@
 </head>
 <body>
   <div class="container">
-    <h1>Rastgele Niyet & Arka Plan</h1>
-    <button onclick="degistir()">Yeni Niyet Getir</button>
+    <h1>Dilek Kurabiyesi</h1>
+    <img src="kurabiye.png" alt="Kurabiye görseli" class="cookie-img">
     <p id="niyet"></p>
     <footer>
       <img src="logo.png" alt="Logo" class="logo">
+      <p class="copyright">© 2025 TICX Media. Tüm hakları saklıdır.</p>
     </footer>
   </div>
 
-  <script>
-    const niyetler = [
-      "Bugün kendime nazik olacağım.",
-      "Yeni fikirlere açık olacağım.",
-      "Odaklanmış şekilde ilerleyeceğim.",
-      "Zorlukları fırsata çevireceğim.",
-      "Yaratıcılığımı özgür bırakacağım."
-    ];
-
-    function degistir() {
-      const rasgele = Math.floor(Math.random() * niyetler.length);
-      document.getElementById("niyet").innerText = niyetler[rasgele];
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
