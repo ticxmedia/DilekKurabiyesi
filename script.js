@@ -1,6 +1,6 @@
 const unsplashAccessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
 
-// ✅ Doğa temalı rastgele arka plan görseli çek
+// ✅ Doğadan görsel çek
 async function fetchBackgroundImage() {
   try {
     const response = await fetch(
@@ -19,10 +19,10 @@ async function fetchBackgroundImage() {
   }
 }
 
-// ✅ Niyetleri `niyetler.json` dosyasından çek
+// ✅ Aynı dizindeki `niyetler.json` dosyasından niyet çek
 async function fetchNiyet() {
   try {
-    const response = await fetch("data/niyetler.json");
+    const response = await fetch("niyetler.json");
     const data = await response.json();
     const niyetler = data.niyetler;
 
@@ -37,7 +37,7 @@ async function fetchNiyet() {
   }
 }
 
-// ✅ Sayfa yüklendiğinde her şeyi başlat
+// ✅ Sayfa yüklenince çalıştır
 window.addEventListener("DOMContentLoaded", () => {
   fetchBackgroundImage();
   fetchNiyet();
