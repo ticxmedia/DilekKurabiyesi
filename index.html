@@ -5,28 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dilek Kurabiyesi</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <div class="arka-plan">
-    <img id="arka-img" src="arkaplan-mobile.jpg" alt="Arka Plan" />
-    <div id="dilek-alani" class="dilek-box">
-      <img id="kurabiye-img" src="" />
-      <p id="dilek-metin">🌠 Dilek yükleniyor...</p>
-      <audio id="cookie-audio" src="cookie-sound.mp3" preload="auto"></audio>
+    <img id="arka-img" alt="Arka Plan" />
+    <div class="dilek-kutu">
+      <img src="kurabiye.png" alt="Dilek Kurabiyesi" class="kurabiye" />
+      <p id="dilek-metin">✨ Dilek yükleniyor...</p>
+      <button class="paylas-btn">Paylaş</button>
     </div>
-    <button onclick="captureAndShowPopup()" class="paylas-btn">Paylaş</button>
   </div>
-
-  <div id="popup" class="popup">
-    <h3>Dileğini paylaşmak ister misin?</h3>
-    <img id="screenshot" />
-    <p>Instagram’da <strong>@ticxmedia</strong>'yı etiketlemeyi <em>unutma!</em> 🤝</p>
-    <button onclick="downloadImage()" class="btn-etiket">Görseli Kaydet</button>
-    <a href="https://www.instagram.com/ticxmedia" target="_blank" class="btn-etiket">Instagram'a Git</a>
-    <button onclick="closePopup()" class="btn-kapat">Kapat</button>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
