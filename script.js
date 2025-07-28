@@ -1,6 +1,6 @@
 const unsplashAccessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
 
-// Doğa temalı arka plan görseli çek
+// ✅ Doğa temalı rastgele arka plan görseli çek
 async function fetchBackgroundImage() {
   try {
     const response = await fetch(
@@ -19,24 +19,25 @@ async function fetchBackgroundImage() {
   }
 }
 
-// Rastgele niyet metni seç
+// ✅ Niyetleri `niyetler.json` dosyasından çek
 async function fetchNiyet() {
-  const niyetler = [
-    "Doğayla uyum içinde olacağım.",
-    "Her nefeste yenileniyorum.",
-    "Hayatın ritmine güveneceğim.",
-    "Güzellikleri fark edeceğim.",
-    "Bugün kendi ışığımı yayacağım."
-  ];
+  try {
+    const response = await fetch("data/niyetler.json");
+    const data = await response.json();
+    const niyetler = data.niyetler;
 
-  const rasgele = Math.floor(Math.random() * niyetler.length);
-  const niyetElement = document.getElementById("niyet");
-
-  if (niyetElement) {
-    niyetElement.innerText = niyetler[rasgele];
+    const rasgele = Math.floor(Math.random() * niyetler.length);
+    const niyetElement = document.getElementById("niyet");
+    if (niyetElement) {
+      niyetElement.innerText = niyetler[rasgele];
+    }
+  } catch (error) {
+    console.error("Niyet JSON verisi alınamadı:", error);
+    document.getElementById("niyet").innerText = "Bugün yeni bir başlangıca hazır ol!";
   }
 }
 
+// ✅ Sayfa yüklendiğinde her şeyi başlat
 window.addEventListener("DOMContentLoaded", () => {
   fetchBackgroundImage();
   fetchNiyet();
