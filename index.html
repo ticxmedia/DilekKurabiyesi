@@ -9,20 +9,19 @@
 </head>
 <body>
   <div class="arka-plan">
-    <img id="arka-img" alt="Arka Plan" />
+    <img id="arka-img" src="arkaplan-mobile.jpg" alt="Arka Plan" />
     <div id="dilek-alani" class="dilek-box">
       <img id="kurabiye-img" src="" />
       <p id="dilek-metin">🌠 Dilek yükleniyor...</p>
       <audio id="cookie-audio" src="cookie-sound.mp3" preload="auto"></audio>
     </div>
+    <button onclick="captureAndShowPopup()" class="paylas-btn">Paylaş</button>
   </div>
-
-  <button onclick="captureAndShowPopup()" class="paylas-btn">Paylaş</button>
 
   <div id="popup" class="popup">
     <h3>Dileğini paylaşmak ister misin?</h3>
     <img id="screenshot" />
-    <p>Instagram’da paylaşırken <strong>@ticxmedia</strong>'yı etiketlemeyi <em>unutma!</em> 🤝</p>
+    <p>Instagram’da <strong>@ticxmedia</strong>'yı etiketlemeyi <em>unutma!</em> 🤝</p>
     <button onclick="downloadImage()" class="btn-etiket">Görseli Kaydet</button>
     <a href="https://www.instagram.com/ticxmedia" target="_blank" class="btn-etiket">Instagram'a Git</a>
     <button onclick="closePopup()" class="btn-kapat">Kapat</button>
