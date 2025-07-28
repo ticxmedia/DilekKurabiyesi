@@ -2,19 +2,28 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Dilek Kurabiyesi</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="arka-plan">
-    <img id="arka-img" alt="Arka Plan" />
-    <div class="dilek-kutu">
-      <img src="kurabiye.png" alt="Dilek Kurabiyesi" class="kurabiye" />
-      <p id="dilek-metin">✨ Dilek yükleniyor...</p>
-      <button class="paylas-btn">Paylaş</button>
+    <img id="manzara" alt="Arka Plan Manzara" />
+    <div class="dilek-kapsul" id="capture-alani">
+      <img src="kurabiye.png" alt="Kurabiye" id="kurabiye" />
+      <p id="dilek-metin">✨ Bugünkü dilek yükleniyor...</p>
+      <button id="paylas-btn">Paylaş</button>
+      <div class="dipnot">
+        <p>Bizi desteklemek için lütfen hikayelerinizde bizden bahsedin 💚</p>
+        <p><strong>Instagram: @ticxmedia</strong></p>
+      </div>
     </div>
+    <footer>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <p class="telif">© Tüm hakları saklıdır</p>
+    </footer>
   </div>
+  <script src="html2canvas.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
