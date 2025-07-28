@@ -104,19 +104,19 @@
     ];
 
     window.onload = () => {
-      const rastgeleNiyet = niyetler[Math.floor(Math.random() * niyetler.length)];
-      document.querySelector(".message").innerText = `✨ Senin bugünkü dileğin: ${rastgeleNiyet}`;
+  const rastgeleNiyet = niyetler[Math.floor(Math.random() * niyetler.length)];
+  document.querySelector(".message").innerText = rastgeleNiyet;
 
-      const accessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
-      const query = "nature landscape";
+  const accessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
+  const query = "nature landscape";
 
-      fetch(`https://api.unsplash.com/photos/random?query=${query}&client_id=${accessKey}`)
-        .then(response => response.json())
-        .then(data => {
-          const bgImage = document.getElementById("bg-image");
-          bgImage.src = data.urls.full;
-          bgImage.alt = data.alt_description || "Doğa manzarası";
-        })
-        .catch(error => console.error("Arka plan alınamadı:", error));
+  fetch(`https://api.unsplash.com/photos/random?query=${query}&client_id=${accessKey}`)
+    .then(response => response.json())
+    .then(data => {
+      const bgImage = document.getElementById("bg-image");
+      bgImage.src = data.urls.full;
+      bgImage.alt = data.alt_description || "Doğa manzarası";
+    })
+    .catch(error => console.error("Arka plan alınamadı:", error));
     };
  
