@@ -1,6 +1,6 @@
 const unsplashAccessKey = "Ep6jy0GfSXBhRqWuV3h2STQSnzjIQHRxnRf42ostnnM";
 
-// ✅ Doğadan görsel çek
+
 async function fetchBackgroundImage() {
   try {
     const response = await fetch(
@@ -19,25 +19,21 @@ async function fetchBackgroundImage() {
   }
 }
 
-// ✅ Aynı dizindeki `niyetler.json` dosyasından niyet çek
-async function fetchNiyet() {
-  try {
-    const response = await fetch(`niyetler.json?v=${Date.now()}`);
-    const data = await response.json();
-    const niyetler = data.niyetler;
 
-    const rasgele = Math.floor(Math.random() * niyetler.length);
-    const niyetElement = document.getElementById("niyet");
-    if (niyetElement) {
-      niyetElement.innerText = niyetler[rasgele];
-    }
-  } catch (error) {
-    console.error("Niyet JSON verisi alınamadı:", error);
-    document.getElementById("niyet").innerText = "Bugün yeni bir başlangıca hazır ol!";
+async function fetchNiyet(){
+  try {
+    const response = await fetch(`niyetler.json?v=${Date.now()}`, { mode: 'cors', cache: 'no-cache' });
+    const data = await response.json();
+    console.log(data.niyetler); // Konsolda niyetler dizisi görünsün
+    const rasgele = Math.floor(Math.random() * data.niyetler.length);
+    document.getElementById("niyet").innerText = data.niyetler[rasgele];
+  } catch(error){
+    console.error("JSON çekilemedi:", error);
   }
 }
 
-// ✅ Sayfa yüklenince çalıştır
+
+
 window.addEventListener("DOMContentLoaded", () => {
   fetchBackgroundImage();
   fetchNiyet();
