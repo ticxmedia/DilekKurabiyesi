@@ -5,7 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* yukarıdan aşağı hizalama */
+  justify-content: flex-start; 
   color: white;
   transition: background 1s ease-in-out;
   text-align: center;
@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  margin-top: 35vh; /* Sayfa yüksekliğinin %20’si kadar aşağı kaydırır */
+  margin-top: 35vh; 
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(6px);
   border-radius: 16px;
@@ -31,7 +31,7 @@ body {
 }
 
 h1 {
-  font-size: 1 rem;
+  font-size: 1rem;
   line-height: 1.4;
 }
 
